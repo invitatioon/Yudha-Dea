@@ -8,17 +8,17 @@
 }
 
  body {
-  min-height: 7000px;
+  min-height: auto;
   max-width: 576px;
   margin: 0 auto;
   border: 4px solid #000;
   border-radius: 10px;
   box-sizing: border-box;  
-  overflow-x:  hidden !important;
 }
 
 .hero {
   position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,7 +56,7 @@
 
 .hero h4 { 
   font-size: 2rem;
-  margin-bottom: 3px;
+
   color: #000;
 }
 
@@ -73,10 +73,8 @@
   background-color: rgb(255, 255, 255, 0.2) !important;
   border-radius: 10px;                  
   text-align: center;         
-  box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.1);
   border: 1px solid white; 
   margin-top: 400px;
-  padding: 2.5%;
   position: relative;
 }
 
@@ -94,8 +92,8 @@
     text-decoration: none;
     padding: 10px;
     position: relative;
-    z-index: 1000;
     border-radius: 5px;
+    z-index: 1000;
 }
 
 .bottom-nav {
@@ -103,14 +101,15 @@
   align-items: center;
   background-color: white; opacity: 0.7;
   max-width: 567px;
-  min-width: 425px;
+  min-width: 375px;
   height: 60px;
+  z-index: 1000;
 }
 
 .nav-item .icon {
-    font-size: 25px;
-    display: block;
-    color:#000;
+  font-size: 25px;
+  display: block;
+  color:#000;
 }
 
 .nav-item .text {
@@ -118,15 +117,11 @@
     display: block;
     margin-top: 5px;
     font-weight: bold;
+    color: #42567b;
 }
 
 .home {
-  position: relative;
   background-image: url('img/background2.png');
-  top : 0;
-  left : 0;
-  width : 100%;
-  height :100%;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -140,11 +135,11 @@
   font-size : 3rem;
   color:white;
   font-weight: bold;
-  margin-top: -100px;
+  margin-top: 30px;
 }
 
 .home h2 {
-  font-size: 1.8rem ;
+  font-size: 1.5rem ;
   color: white;
   font-family: "Edu AU VIC WA NT Hand";
   margin-top: 50px;
@@ -204,8 +199,7 @@ transform: translateX(15%);
 }
 
 .info {
-  position: relative;
- background-color: #42567b;
+  background-color: #42567b;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -225,12 +219,24 @@ transform: translateX(15%);
   text-align: center;
 }
 
-.my-google-maps {
-  width: 100%;           
-  height: 250px;       
+.info h2{
+  font-size: 1rem;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.my-google-maps {     
   border: 2px solid #000;     
   border-radius: 10px;  
-  margin-top: 100px;
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  border: none;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .open-map-btn {
@@ -242,14 +248,8 @@ transform: translateX(15%);
   padding: 5px 10px;
   background-color: rgb(255, 255, 255, 0.2) !important;
   display: inline-block; 
-}
-
-.info .description {
-  font-size: 1rem;
-  font-weight: 300;
-  color: white;
-  text-align: center;
-  margin-top: 15px;
+  position: relative;
+  z-index: 2; 
 }
 
 .info .card {
@@ -278,7 +278,7 @@ transform: translateX(15%);
 .gallery {
   background-color: #42567b;
   margin-bottom: 0.3%;
-  height: 100vh;
+  height: auto;
 }
 
 .gallery h1 {
@@ -312,7 +312,7 @@ transform: translateX(15%);
   top : 0;
   left : 0;
   width : 100%;
-  height :120vh;
+  height :auto;
   background-size : cover;
   background-position : center;
   z-index : -1;
@@ -333,6 +333,7 @@ transform: translateX(15%);
 .rsvp p, .rsvp form label, .rsvp h2 {
   color: white;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .rsvp button {
@@ -388,7 +389,7 @@ transform: translateX(15%);
   top : 0;
   left : 0;
   width : 100%;
-  height :100vh;
+  height :auto;
   background-size : cover;
   background-position : center;
   z-index : -2;
@@ -485,11 +486,7 @@ footer li {
 @media (max-width: 1440px) {
     body {
       max-width: 576px;
-      min-height: 480px;
       margin: 0 auto;
-      border: 4px solid #000;
-      border-radius: 10px;
-      box-sizing: border-box;  
       overflow-x:  hidden !important;
   }
   
@@ -518,11 +515,15 @@ footer li {
   }
 
   .info h1 {
+    margin-top: 10px;
+  }
+
+  .info h2 {
     margin-top: 50px;
   }
   
   .my-google-maps {
-    margin-top: 140px;
+    margin-top: 50px;
   }
   
   .rsvp h1 {
@@ -549,22 +550,17 @@ footer li {
 @media (max-width: 1204px) {
   body {
     max-width: 576px;
-    min-height: 480px;
     margin: 0 auto;
-    border: 4px solid #000;
-    border-radius: 10px;
-    box-sizing: border-box;  
     overflow-x:  hidden !important;
   }
   
   .hero h1{
-    font-size: 3.3rem;
-    margin-top: -40px;
+    font-size: 3rem;
+    margin-top: 20px;
   }
 
   .my-box {
-    margin-top: 370px;
-    padding: 2%;
+    margin-top: 390px;
   }
 
   .bottom-nav{
@@ -572,11 +568,14 @@ footer li {
   }
 
   .info h1  {
-    margin-top: 90px;
+    margin-top: 10px;
+  }
+  .info h2 {
+    margin-top: 50px;
   }
 
   .my-google-maps {
-    margin-top: 100px;
+    margin-top: 10px;
   }
 
   .rsvp h1 {
@@ -590,11 +589,7 @@ footer li {
 @media (max-width: 768px) {
   body {
     max-width: 576px;
-    min-height: 480px;
     margin: 0 auto;
-    border: 4px solid #000;
-    border-radius: 10px;
-    box-sizing: border-box;  
     overflow-x:  hidden !important;
   }
   
@@ -617,23 +612,19 @@ footer li {
 @media (max-width: 576px)  {
   body {
     max-width: 576px;
-    min-height: 425px;
     margin: 0 auto;
-    border: 4px solid #000;
-    border-radius: 10px;
-    box-sizing: border-box;  
     overflow-x:  hidden;
 
   }
 
   .hero h1{
-    font-size: 2rem;
-    margin-top: 10px;
+    font-size: 2.5rem;
+    margin-top: -10px;
   }
 
   .hero h2 {
     font-size: 1.4rem;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .hero h4{
@@ -647,6 +638,7 @@ footer li {
   .my-box {
     height: 120px;
     width: 300px;
+    margin-top: 330px;
   }
 
   .my-box .btn {
@@ -658,27 +650,31 @@ footer li {
   }
 
   .home h1 {
-    font-size : 2.3rem;
-    margin-top: -80px;
+    font-size : 3rem;
+    margin-top: 20px;
   }
   
   .home h2 {
-    font-size: 1.3rem ;
+    font-size: 1.5rem ;
     margin-top: 50px;
   }
   
   .home h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 70px;
   }
 
   .profil h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 150px;
   }
 
+  .profil p {
+    margin-top: 20px;
+  }
+
   .info h1  {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 50px;
   }
 
@@ -687,10 +683,12 @@ footer li {
     justify-content: center;
   }
 
+  .gallery {
+    height: auto
+  }
+
   .gallery .row {
-    display: grid;
     grid-template-columns: repeat(2, 1fr); /* Menampilkan 4 kolom */
-    gap: 10px; /* Jarak antar gambar */
   }
   
   .gallery img, .my-youtube-video {
@@ -698,8 +696,24 @@ footer li {
     padding: 2%;
   }
 
+  .rsvp h1{
+    font-size: 3rem;
+  }
+
+  .rsvp p {
+     margin-top: 30px;
+  }
+
+  .rsvp h2 {
+    margin-top: -30px;
+  }
+
   .live-komentar-box {
     height: 340px;
+  }
+
+  .gifts h1 {
+    font-size: 4rem;
   }
 
   .credit-card, 
@@ -712,38 +726,76 @@ footer li {
   body {
     min-height: 425px;
     margin: 0 auto;
-    border: 4px solid #000;
-    border-radius: 10px;
-    box-sizing: border-box;  
     overflow-x:  hidden;
 
   }
 
   .hero h1{
-    font-size: 2rem;
+    font-size: 2.3rem;
+    margin-top: -30px;
     }
 
   .hero h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    margin-top: 15px;
   }
 
   .my-box {
     height: 120px;
     width: 300px;
-    margin-top: 240px;
   }
 
   .my-box .btn {
     font-size: 0.8rem;
   }
 
+  .nav-item .icon {
+    font-size: 18px;
+  }
+
+  .nav-item .text {
+    font-size: 10px;
+  }
+
   .bottom-nav {
-    max-width: 415px;
+    min-width: 345px;
+
+    
+  }
+
+  .home h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .home h3 {
+    font-size: 1.8rem;
+  }
+
+  .profil h1 {
+    font-size: 1.8rem;
+  }
+
+  .info h1 {
+    font-size: 2.1rem;
+  }
+
+  .info h2 {
+     font-size: 0.9rem;
+  }
+
+  .gallery {
+    height: auto
+  }
+
+  .gallery h1, .rsvp h1  {
+    font-size: 2.3rem;
+    margin-top: 30px;
   }
   
   .gallery .row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Menampilkan 4 kolom */
+    grid-template-columns:  repeat(auto-fit, minmax(150px, 1fr)); /* Responsif */
     gap: 10px; /* Jarak antar gambar */
   }
 
@@ -752,8 +804,27 @@ footer li {
   }
 
   .live-komentar-box {
-    height: 350px;
+    height: 330px;
   }
 
+  .gifts h1 {
+    font-size: 2.4rem;
+    margin-top: 100px;
+  }
+
+  .credit-card ,
+  .credit-card1 {
+    width: 350px;
+    height: 180px;
+}
+
+  .head, .number, .tail {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+  .number {
+  margin-top: 40px;
+}
 
 }
